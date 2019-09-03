@@ -46,14 +46,14 @@ public class PlayerMovement : MonoBehaviour
             if (playerLadderFeet >= (ladder.transform.position.y + (ladder.localScale.y / 2)))
             {
                 transform.position = new Vector3(transform.position.x, ladder.transform.position.y + (ladder.localScale.y / 2) + 0.25f, transform.position.z);
-                Debug.Log("work");
+               
             } else
             {
                 onLadder = true;
                 GetComponent<Rigidbody>().useGravity = false;
                 transform.Translate(Vector3.up * 3 * Time.deltaTime);
                 transform.position = new Vector3(ladder.position.x, transform.position.y, transform.position.z);
-                Debug.Log("dont");
+               
             }
         }
 
@@ -71,13 +71,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+
         if (Input.GetKeyDown("space") && grounded == true)
         {
-
+            this.gameObject.GetComponent<Rigidbody>().AddForce(new Vector2(0, 2), ForceMode.Impulse);
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "floor" && onLadder == false)
         {
