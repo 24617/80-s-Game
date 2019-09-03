@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Boulder : MonoBehaviour
 {
-    public float speed = 1;
-    public bool speedActive = false;
+    public float Speed = 1;
+    public bool SpeedActive = false;
     public GameObject Threshold;
     // Start is called before the first frame update
     void Start()
@@ -16,9 +16,9 @@ public class Boulder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(speedActive == true)
+        if(SpeedActive == true)
         {
-            transform.position += new Vector3(speed, 0, 0);
+            transform.position += new Vector3(Speed, 0, 0);
             //speedActive = false;
         }
 
@@ -36,7 +36,7 @@ public class Boulder : MonoBehaviour
 
         if (other.gameObject.tag == "Floor")
         {
-            speedActive = true;
+            SpeedActive = true;
         }
 
         if (other.gameObject.tag == "Wall")

@@ -5,8 +5,8 @@ using UnityEngine;
 public class Boulder_spawner : MonoBehaviour
 {
     [SerializeField] private GameObject BoulderPrefab;
-    [SerializeField]  private float spawnRate =30;
-    private float timeLeft =0;
+    [SerializeField]  private float SpawnRate =30;
+    private float TimeLeft =0;
 
 
     // Start is called before the first frame update
@@ -19,10 +19,10 @@ public class Boulder_spawner : MonoBehaviour
     void Update()
     {
         //elke 2 seconden kiezen of er een gespawned word, en dan elke keer kiezen of er dubbel gespawned word.
-        timeLeft -= Time.deltaTime;
-        if (timeLeft < 0)
+        TimeLeft -= Time.deltaTime;
+        if (TimeLeft < 0)
         {
-            timeLeft = 60 / spawnRate * Random.Range(0.75f,1.25f);
+            TimeLeft = 60 / SpawnRate * Random.Range(0.75f,1.25f);
             SpawnBoulder();
         }
     }
