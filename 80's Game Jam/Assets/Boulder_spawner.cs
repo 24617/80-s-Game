@@ -24,7 +24,6 @@ public class Boulder_spawner : MonoBehaviour
         {
             timeLeft = 60 / spawnRate * Random.Range(0.75f,1.25f);
             SpawnBoulder();
-            Debug.Log("sfgsdgglslgkgjk");
         }
     }
 
